@@ -32,7 +32,6 @@ class SabnzbdApi(object):
     def refresh_queue(self):
         try:
             api_args = self.params(start=0, limit=10)
-            print('api_args', api_args)
             response = self.session.get(self.API_URL, params=api_args)
 
             self.queue = response.json().get('queue')
